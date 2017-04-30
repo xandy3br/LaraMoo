@@ -3,7 +3,7 @@ Inspired by Moodle, built with Laravel and Quarx
 ##Current: Laravel 5.4, Quarx 2, 
 
 # Current Technologies Used
-##Laravel - thanks to Laravel for a great framework to build on
+## Laravel - thanks to Laravel for a great framework to build on
 [Laravel Website](http://laravel.com)
 
 
