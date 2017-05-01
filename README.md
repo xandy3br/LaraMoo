@@ -5,6 +5,8 @@ Inspired by Moodle, built with Laravel and Quarx.
  First was Moodle of course, but Moodle is incredibly slow and clunky, and when I checked the code I was appalled at how poorly it was written. 
  I just couldn't find any software that did what I wanted well, so I'm creating my own.     
  
+# NOTE - as of April 30, 2017, this project is new.
+## Currently, it has only the starting technologies and a Courses shell. You can't use it yet, but if you want to help out, let me know.   
 
 # Current Technologies Used
 ## Laravel 5.4 - thanks to Laravel for a great framework to build on

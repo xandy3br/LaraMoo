@@ -49,11 +49,17 @@ return [
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
+            'prefix' => env('DB_PREFIX', 'lmoo_'),
             'strict' => true,
             'engine' => null,
         ],
 
+       'testing' => [ 
+          'driver' => 'sqlite', 
+          'database' => ':memory:', 
+          'prefix' => ''
+       ],        
+       
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),

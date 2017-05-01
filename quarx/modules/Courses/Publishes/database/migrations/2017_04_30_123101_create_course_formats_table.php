@@ -13,9 +13,7 @@ class CreateCoursesTable extends Migration
      */
     public function up()
     {
-       Schema::dropIfExists('courses');
-       
-       Schema::create('courses', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category')->default(0);
             $table->integer('sortorder')->default(0);
@@ -31,13 +29,22 @@ class CreateCoursesTable extends Migration
             $table->string('icon', 255)->default('');
             $table->tinyInteger('showreports')->default(0);
             $table->tinyInteger('visible')->default(0);
-            $table->string('lang', 10);
-            $table->integer('theme')->default(0);
+            `lang` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+            `calendartype` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+            `theme` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+            `timecreated` bigint(10) NOT NULL DEFAULT '0',
+            `timemodified` bigint(10) NOT NULL DEFAULT '0',
+            `requested` tinyint(1) NOT NULL DEFAULT '0',
+            `enablecompletion` tinyint(1) NOT NULL DEFAULT '0',
+            `completionnotify` tinyint(1) NOT NULL DEFAULT '0',
+            `cacherev` bigint(10) NOT NULL DEFAULT '0',
             
-            $table->timestampsTz();
             
-            $table->index(['fullname', 'visible'], 'courses_fullname_visible_index');
-            $table->index(['category', 'fullname'], 'courses_category_fullname_index');
+            
+            $table->timestamps();
+            
+            
+            
             
         });
         
