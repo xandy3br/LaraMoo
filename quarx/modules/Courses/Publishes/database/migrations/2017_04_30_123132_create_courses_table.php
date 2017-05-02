@@ -22,6 +22,7 @@ class CreateCoursesTable extends Migration
             $table->string('fullname', 255);
             $table->string('shortname', 255);
             $table->string('idnumber', 100)->default('');
+            $table->integer('freesections')->default(0);
             $table->mediumText('summary');
             $table->integer('course_format_id')->default(1);
             $table->tinyInteger('showgrades')->default(1);

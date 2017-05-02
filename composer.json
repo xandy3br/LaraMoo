@@ -28,7 +28,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "Bgies\\LaramooFront\\": "packages/bgies/laramoo-front/src"
         }
     },
     "scripts": {
