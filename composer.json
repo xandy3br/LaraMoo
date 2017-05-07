@@ -23,13 +23,13 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Quarx\\": "quarx/"
+            "Quarx\\": "quarx/",
+            "Bgies\\Laramoofront\\": "packages/bgies/laramoofront/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/",
-            "Bgies\\LaramooFront\\": "packages/bgies/laramoo-front/src"
+            "Tests\\": "tests/"
         }
     },
     "scripts": {

@@ -21,7 +21,11 @@ Inspired by Moodle, built with Laravel and Quarx for the backend.
 ### Yab Newsletter
 [Subscribe](http://eepurl.com/ck7dSv)
 
-## Front end: Ionic 3 and Angular 4
+## Simple Web Front end: HTML5, Bootstrap 4, CSS3, SASS 
+### The simple Web based Front End is a minimalist layout using Bootstrap 4
+
+
+## Mobile Front end: Ionic 3 and Angular 4
 ###
 [Ionic](http://ionicframework.com) 
 [Angular](http://angular.io)

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCoursesTable extends Migration
+class CreateCourseSectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -27,7 +27,7 @@ class CreateCoursesTable extends Migration
             
             $table->timestampsTz();
             
-            $table->index(['course_id', 'sectionorder', 'sectionname'], 'course_sections_course_sectionname_index');
+            $table->index(['course_id', 'courseorder', 'sectionname'], 'course_sections_course_sectionname_index');
             
         });
         

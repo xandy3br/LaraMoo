@@ -14,9 +14,11 @@ class CoursesModuleProvider extends ServiceProvider
     {
         // Publishes
         $this->publishes([
-            __DIR__.'/Publishes/app' => base_path('app'),
-            __DIR__.'/Publishes/routes' => base_path('routes'),
-            __DIR__.'/Publishes/resources' => base_path('resources'),
+//            __DIR__.'/Publishes/app' => base_path('app'),
+//            __DIR__.'/Publishes/routes' => base_path('routes'),
+            __DIR__.'/Publishes/database/migrations' => base_path('database/migrations'),
+            __DIR__.'/Publishes/database/seeds' => base_path('database/seeds'),
+//            __DIR__.'/Publishes/resources' => base_path('resources'),
         ]);
 
         // Load events

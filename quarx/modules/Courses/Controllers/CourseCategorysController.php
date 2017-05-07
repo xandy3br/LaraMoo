@@ -11,7 +11,7 @@ use Quarx\Modules\Courses\Requests\CourseCreateRequest;
 use Quarx\Modules\Courses\Requests\CourseUpdateRequest;
 use Quarx\Modules\Courses\Models\CourseCategory;
 
-class CoursesController extends Controller
+class CourseCategorysController extends Controller
 {
     public function __construct(CourseService $courseService)
     {

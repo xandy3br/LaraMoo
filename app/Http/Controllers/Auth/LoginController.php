@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'dashboard';
+    protected $redirectTo = 'quarx/dashboard';
 
     /**
      * Create a new controller instance.
@@ -44,7 +44,7 @@ class LoginController extends Controller
     public function authenticated()
     {
         if (auth()->user()->hasRole('admin')) {
-            return redirect('/admin/dashboard');
+            return redirect('/quarx/dashboard');
         }
 
         return redirect('dashboard');

@@ -180,6 +180,7 @@ return [
         Yab\Quarx\QuarxProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
+        Bgies\Laramoofront\LaramooFrontServiceProvider::class
     ],
 
     /*
