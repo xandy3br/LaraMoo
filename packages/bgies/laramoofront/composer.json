@@ -1,0 +1,15 @@
+{
+    "name": "bgies/laramoofront",
+    "description": "Simple Front end for LaraMoo",
+    "authors": [
+        {
+            "name": "bgies",
+            "email": "rbgies@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "illuminate/support": "^5.4"
+    
+    }
+}
