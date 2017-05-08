@@ -4,7 +4,7 @@ namespace Quarx\Modules\Courses\Models;
 
 use Yab\Quarx\Models\QuarxModel;
 
-class CourseCategory extends Model
+class CourseCategory extends QuarxModel
 {
     public $table = "course_categorys";
 
@@ -14,12 +14,15 @@ class CourseCategory extends Model
 
     public $fillable = [
         // Course table data
-       'category_name', 'description', 'category_parent', 'sortorder', 'visible' 
+       'categoryname', 'description', 'categoryparent', 'sortorder', 'visible' 
     ];
 
     public static $rules = [
         // create rules
-        
+      'categoryname' => 'required|max:255',
+      'description' => 'sometimes',
+      ''
+       'company_name_en' => 'max:64',
     ];
 
     

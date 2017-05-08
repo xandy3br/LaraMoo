@@ -7,10 +7,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="deleteModalLabel">Delete Course</h4>
+                    <h4 class="modal-title" id="deleteModalLabel">Delete Category</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure want to delete this Course?</p>
+                    <p>Are you sure want to delete this Category?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -27,7 +27,7 @@
             <input class="form-control form-inline pull-right" name="search" placeholder="Search">
             {!! Form::close() !!}
         </div>
-        <h1 class="page-header">Courses</h1>
+        <h1 class="page-header">Categories</h1>
     </div>
 
     @if (isset($term))

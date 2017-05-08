@@ -1,23 +1,33 @@
 @extends('quarx::layouts.dashboard') @section('content')
 
 <div class="row">
-	<h1 class="page-header">Courses</h1>
+	<h1 class="page-header">Categories</h1>
 	<div class="form-group text-right">
 		<a href="quarx/courses/category/new" class="btn btn-warning raw-right">New Category</a>
 	</div>
 </div>
 
-@include('courses::courses.breadcrumbs', ['course' => ['create']])
+@include('courses::coursecategorys.breadcrumbs', ['course' => ['create']])
 
 <div class="row">
-	<form method="POST" action="http://laramoo.local:8000/quarx/courses"
+	<form method="POST" action="http://laramoo.local:8000/quarx/coursecategorys"
 		accept-charset="UTF-8" courses="1" class="add">
 		<input name="_token" value="sesUYbBTyv1mM3zN9hITd4xfw9YkvkUfxHb5ybQh"
 			type="hidden">
 		<div class="form-group ">
-			<label class="control-label" for="Category">Category</label>
-			  <select id="Category" class="form-control" name="category"
-				placeholder="Category">
+			<label class="control-label" for="Categoryname">Category Name</label><input
+				id="Categoryname" class="form-control" name="categoryname"
+				placeholder="Categoryname" type="text">
+		</div>
+		<div class="form-group ">
+			<label class="control-label" for="Description">Description</label><input
+				id="Description" class="form-control" name="description"
+				placeholder="Description" type="text">
+		</div>
+		<div class="form-group ">
+			<label class="control-label" for="Categoryparent">Category Parent</label>
+			  <select id="Categoryparent" class="form-control" name="categoryparent"
+				placeholder="Categoryparent">
 				@foreach ($categories as $category)
 					<option value="{!! $category->id !!}">{!! $category->categoryname !!}</option>
 				@endforeach
@@ -28,56 +38,7 @@
 				id="Sortorder" class="form-control" name="sortorder"
 				placeholder="Sortorder" type="number">
 		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Fullname">Fullname</label><input
-				id="Fullname" class="form-control" name="fullname"
-				placeholder="Fullname" type="text">
-		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Shortname">Shortname</label><input
-				id="Shortname" class="form-control" name="shortname"
-				placeholder="Shortname" type="text">
-		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Idnumber">Idnumber</label><input
-				id="Idnumber" class="form-control" name="idnumber"
-				placeholder="Idnumber" type="text">
-		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Freesections">Freesections</label><input
-				id="Freesections" class="form-control" name="freesections"
-				placeholder="Freesections" type="number">
-		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Summary">Text</label>
-			<textarea id="Summary" class="form-control" name="summary"
-				placeholder="Text"></textarea>
-		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Course_format_id">Course Format Id</label><input
-				id="Course_format_id" class="form-control" name="course_format_id"
-				placeholder="Course Format Id" type="number">
-		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Showgrades">Showgrades</label><input
-				id="Showgrades" class="form-control" name="showgrades"
-				placeholder="Showgrades" type="number">
-		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Newsitems">Newsitems</label><input
-				id="Newsitems" class="form-control" name="newsitems"
-				placeholder="Newsitems" type="number">
-		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Startdate">Startdate</label><input
-				id="Startdate" class="form-control" name="startdate"
-				placeholder="Startdate" type="date">
-		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Enddate">Enddate</label><input
-				id="Enddate" class="form-control" name="enddate"
-				placeholder="Enddate" type="date">
-		</div>
+		
 		<div class="form-group ">
 			<label class="control-label" for="Icon">Icon</label><input id="Icon"
 				class="form-control" name="icon" placeholder="Icon" type="text">
@@ -103,7 +64,7 @@
 		</div>
 
 		<div class="form-group text-right">
-			<a href="http://laramoo.local:8000/quarx/courses"
+			<a href="http://laramoo.local:8000/quarx/coursecategorys"
 				class="btn btn-default raw-left">Cancel</a> <input
 				class="btn btn-primary" value="Save" type="submit">
 		</div>

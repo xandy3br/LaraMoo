@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CourseFormatsSeeder extends Seeder
+class CourseFormatsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class CourseFormatsSeeder extends Seeder
         //
        \DB::table('course_formats')->truncate();
         
-       \DB::table('course_formats')->insert(
+       \DB::table('course_formats')->insert([
           [
             'id' => 1,
             'format' => 'weekly',
@@ -44,7 +44,7 @@ class CourseFormatsSeeder extends Seeder
           
           
           
-       );
+       ]);
        
     }
 }

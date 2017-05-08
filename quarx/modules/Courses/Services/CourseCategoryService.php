@@ -3,13 +3,13 @@
 namespace Quarx\Modules\Courses\Services;
 
 use Config;
-use Quarx\Modules\Courses\Models\Course;
+use Quarx\Modules\Courses\Models\CourseCategory;
 
-class CourseService
+class CourseCategoryService
 {
-    public function __construct(Course $course)
+    public function __construct(CourseCategory $coursecategory)
     {
-        $this->model = $course;
+        $this->model = $coursecategory;
     }
 
     public function all()
@@ -35,7 +35,7 @@ class CourseService
         $query = $this->model->orderBy('created_at', 'desc');
         $query->where('id', 'LIKE', '%'.$payload.'%');
 
-        $columns = Schema::getColumnListing('courses');
+        $columns = Schema::getColumnListing('course_categorys');
 
         foreach ($columns as $attribute) {
             $query->orWhere($attribute, 'LIKE', '%'.$payload.'%');

@@ -6,16 +6,16 @@ use Quarx;
 use CryptoService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Quarx\Modules\Courses\Services\CourseService;
-use Quarx\Modules\Courses\Requests\CourseCreateRequest;
-use Quarx\Modules\Courses\Requests\CourseUpdateRequest;
+use Quarx\Modules\Courses\Services\CourseCategoryService;
+use Quarx\Modules\Courses\Requests\CourseCategoryCreateRequest;
+use Quarx\Modules\Courses\Requests\CourseCategoryUpdateRequest;
 use Quarx\Modules\Courses\Models\CourseCategory;
 
 class CourseCategorysController extends Controller
 {
-    public function __construct(CourseService $courseService)
+    public function __construct(CourseCategoryService $courseCategoryService)
     {
-        $this->service = $courseService;
+        $this->service = $courseCategoryService;
     }
 
     /**
@@ -25,10 +25,10 @@ class CourseCategorysController extends Controller
      */
     public function index(Request $request)
     {
-        $courses = $this->service->paginated();
-        return view('courses::courses.index')
-            ->with('pagination', $courses->render())
-            ->with('courses', $courses);
+        $coursecategorys = $this->service->paginated();
+        return view('courses::coursecategorys.index')
+            ->with('pagination', $coursecategorys->render())
+            ->with('coursecategorys', $coursecategorys);
     }
 
     /**
@@ -38,11 +38,11 @@ class CourseCategorysController extends Controller
      */
     public function search(Request $request)
     {
-        $courses = $this->service->search($request->search);
-        return view('courses::courses.index')
+        $coursecategorys = $this->service->search($request->search);
+        return view('courses::coursecategorys.index')
             ->with('term', $request->search)
             ->with('pagination', $courses->render())
-            ->with('courses', $courses);
+            ->with('coursecategorys', $coursecategorys);
     }
 
     /**
@@ -59,27 +59,27 @@ class CourseCategorysController extends Controller
             ->get();
 
        
-        return view('courses::courses.create')
+        return view('courses::coursecategorys.create')
             ->with('categories', $categories);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\CourseCreateRequest  $request
+     * @param  \Illuminate\Http\CourseCategoryCreateRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CourseCreateRequest $request)
+    public function store(CourseCategoryCreateRequest $request)
     {
         $result = $this->service->create($request->except('_token'));
 
         if ($result) {
             Quarx::notification('Successfully created', 'success');
-            return redirect('quarx/courses/'.$result->id.'/edit');
+            return redirect('quarx/coursecategorys/'.$result->id.'/edit');
         }
 
         Quarx::notification('Failed to create', 'warning');
-        return redirect('quarx/courses');
+        return redirect('quarx/coursecategorys');
     }
 
     /**
@@ -90,8 +90,8 @@ class CourseCategorysController extends Controller
      */
     public function show($id)
     {
-        $course = $this->service->find($id);
-        return view('courses::courses.show')->with('course', $course);
+        $coursecategory = $this->service->find($id);
+        return view('courses::coursecategorys.show')->with('coursecategory', $coursecategory);
     }
 
     /**
@@ -102,18 +102,19 @@ class CourseCategorysController extends Controller
      */
     public function edit($id)
     {
-        $course = $this->service->find($id);
-        return view('courses::courses.edit')->with('course', $course);
+        $coursecategory = $this->service->find($id);
+        return view('courses::coursecategorys.edit')
+            ->with('coursecategory', $coursecategory);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\CourseUpdateRequest  $request
+     * @param  \Illuminate\Http\CourseCategoryUpdateRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CourseUpdateRequest $request, $id)
+    public function update(CourseCategoryUpdateRequest $request, $id)
     {
         $result = $this->service->update($id, $request->except(['_token', '_method']));
 
@@ -138,10 +139,10 @@ class CourseCategorysController extends Controller
 
         if ($result) {
             Quarx::notification('Successfully deleted', 'success');
-            return redirect('quarx/courses');
+            return redirect('quarx/coursecategorys');
         }
 
         Quarx::notification('Failed to delete', 'warning');
-        return redirect('quarx/courses');
+        return redirect('quarx/coursecategorys');
     }
 }
