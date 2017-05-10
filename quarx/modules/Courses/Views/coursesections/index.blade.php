@@ -7,10 +7,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="deleteModalLabel">Delete Category</h4>
+                    <h4 class="modal-title" id="deleteModalLabel">Delete Course</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure want to delete this Category?</p>
+                    <p>Are you sure want to delete this Course?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -21,13 +21,13 @@
     </div>
 
     <div class="row">
-        <a class="btn btn-primary pull-right" href="{!! route('quarx.coursecategorys.create') !!}">Add New</a>
+        <a class="btn btn-primary pull-right" href="{!! route('quarx.courses.create') !!}">Add New</a>
         <div class="pull-right raw-margin-right-24">
             {!! Form::open(['url' => 'quarx/courses/search']) !!}
             <input class="form-control form-inline pull-right" name="search" placeholder="Search">
             {!! Form::close() !!}
         </div>
-        <h1 class="page-header">Categories</h1>
+        <h1 class="page-header">Courses</h1>
     </div>
 
     @if (isset($term))
@@ -37,8 +37,8 @@
     @endif
 
     <div class="row">
-        @if ($coursecategorys->isEmpty())
-            <div class="well text-center">No Categories found .</div>
+        @if ($courses->isEmpty())
+            <div class="well text-center">No courses found .</div>
         @else
             <table class="table table-striped">
                 <thead>
@@ -47,18 +47,18 @@
                 </thead>
                 <tbody>
 
-                @foreach($coursecategorys as $coursecategory)
+                @foreach($courses as $course)
                     <tr>
                         <td>
-                            <a href="{!! route('quarx.coursecategorys.edit', [$coursecategory->id]) !!}">{!! $coursecategory->categoryname !!}</a>
+                            <a href="{!! route('quarx.courses.edit', [$course->id]) !!}">{!! $course->name !!}</a>
                         </td>
                         <td class="text-right">
-                            <form method="post" action="{!! url('_sectionPrefix_courses/'.$coursecategory->id) !!}">
+                            <form method="post" action="{!! url('_sectionPrefix_courses/'.$course->id) !!}">
                                 {!! csrf_field() !!}
                                 {!! method_field('DELETE') !!}
                                 <button class="delete-btn btn btn-xs btn-danger pull-right" type="submit"><i class="fa fa-trash"></i> Delete</button>
                             </form>
-                            <a class="btn btn-xs btn-default raw-margin-right-8 pull-right" href="{!! route('quarx.coursecategorys.edit', [$coursecategory->id]) !!}"><i class="fa fa-pencil"></i> Edit</a>
+                            <a class="btn btn-xs btn-default raw-margin-right-8 pull-right" href="{!! route('quarx.courses.edit', [$course->id]) !!}"><i class="fa fa-pencil"></i> Edit</a>
                         </td>
                     </tr>
                 @endforeach

@@ -15,7 +15,7 @@
          <a class="nav-item nav-link" href="{{ url('events') }}">Events</a>
          <a class="nav-item nav-link" href="{{ url('faqs') }}">FAQs</a>
          <a class="nav-item nav-link" href="{{ url('gallery') }}">Gallery</a>
-         <a class="nav-item nav-link" href="{{ url('courses') }}">Courses</a>
+         <a class="nav-item nav-link href="#{{ url('courses') }}">Courses</a>
       </div>
    </div>
       <ul class="nav navbar-nav pull-xs-right">

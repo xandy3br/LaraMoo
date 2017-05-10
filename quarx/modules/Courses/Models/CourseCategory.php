@@ -21,8 +21,9 @@ class CourseCategory extends QuarxModel
         // create rules
       'categoryname' => 'required|max:255',
       'description' => 'sometimes',
-      ''
-       'company_name_en' => 'max:64',
+      'categoryparent' => 'required|integer',
+      'sortorder' => 'required|integer',
+      'visible' => 'sometimes|integer'
     ];
 
     

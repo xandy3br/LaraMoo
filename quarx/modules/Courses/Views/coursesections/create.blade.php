@@ -2,9 +2,9 @@
 
 <div class="row">
 	<h1 class="page-header">Courses</h1>
-</div>
-<div class="row">
-	    @include('courses::courseheader')
+	<div class="form-group text-right">
+		<a href="/quarx/coursecategorys/create" class="btn btn-warning raw-right">New Category</a>
+	</div>
 </div>
 
 @include('courses::courses.breadcrumbs', ['course' => ['create']])
