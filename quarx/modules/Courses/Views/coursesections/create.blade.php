@@ -1,58 +1,49 @@
 @extends('quarx::layouts.dashboard') @section('content')
 
 <div class="row">
-	<h1 class="page-header">Courses</h1>
+	<h2 class="page-header">Create Section for "{!! $course->fullname !!}"</h2>
 	<div class="form-group text-right">
-		<a href="/quarx/coursecategorys/create" class="btn btn-warning raw-right">New Category</a>
+		<a href="/quarx/coursesections/create" class="btn btn-warning raw-right">New Section</a>
 	</div>
 </div>
 
-@include('courses::courses.breadcrumbs', ['course' => ['create']])
+@include('courses::coursesections.breadcrumbs', ['coursesections' => ['create']])
 
 <div class="row">
-	<form method="POST" action="http://laramoo.local:8000/quarx/courses"
+	<form method="POST" action="http://laramoo.local:8000/quarx/coursesections"
 		accept-charset="UTF-8" courses="1" class="add">
-		<input name="_token" value="sesUYbBTyv1mM3zN9hITd4xfw9YkvkUfxHb5ybQh"
-			type="hidden">
+		{!! csrf_field() !!}
+		<input type="hidden" name="course_id" value="{!! $course->id !!}">
 		<div class="form-group ">
-			<label class="control-label" for="Category">Category</label>
-			  <select id="Category" class="form-control" name="category"
-				placeholder="Category">
-				@foreach ($categories as $category)
-					<option value="{!! $category->id !!}">{!! $category->categoryname !!}</option>
-				@endforeach
-			  </select>	
+			<label class="control-label" for="Sectionname">Section Name</label>
+			<input id="Sectionname" class="form-control" name="sectionname"
+				placeholder="Section Name" type="text">
 		</div>
 		<div class="form-group ">
-			<label class="control-label" for="Sortorder">Sortorder</label> <input
-				id="Sortorder" class="form-control" name="sortorder"
-				placeholder="Sortorder" type="number">
+			<label class="control-label" for="Courseorder">Course Order</label>
+			 <input id="Courseorder" class="form-control" name="courseorder"
+				placeholder="Courseorder" type="number">
 		</div>
+		
 		<div class="form-group ">
-			<label class="control-label" for="Fullname">Fullname</label><input
-				id="Fullname" class="form-control" name="fullname"
-				placeholder="Fullname" type="text">
+			<label class="control-label" for="Sectionshortdescription">Short Description (max 255)</label>
+			<textarea id="Sectionshortdescription" class="form-control redactor" name="sectionshortdescription"
+				placeholder="Short Description" maxlength="250"></textarea>
 		</div>
+		
 		<div class="form-group ">
-			<label class="control-label" for="Shortname">Shortname</label><input
-				id="Shortname" class="form-control" name="shortname"
-				placeholder="Shortname" type="text">
+			<label class="control-label" for="Sectiondescription">Description</label>
+			<textarea id="Sectiondescription" class="form-control redactor" name="sectiondescription"
+				placeholder="Description"></textarea>
 		</div>
+			
+		
 		<div class="form-group ">
 			<label class="control-label" for="Idnumber">Idnumber</label><input
 				id="Idnumber" class="form-control" name="idnumber"
 				placeholder="Idnumber" type="text">
 		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Freesections">Freesections</label><input
-				id="Freesections" class="form-control" name="freesections"
-				placeholder="Freesections" type="number">
-		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Summary">Text</label>
-			<textarea id="Summary" class="form-control" name="summary"
-				placeholder="Text"></textarea>
-		</div>
+		
 		<div class="form-group ">
 			<label class="control-label" for="Course_format_id">Course Format Id</label><input
 				id="Course_format_id" class="form-control" name="course_format_id"
@@ -96,6 +87,7 @@
 			<label class="control-label" for="Lang">Lang</label><input id="Lang"
 				class="form-control" name="lang" placeholder="Lang" type="text">
 		</div>
+		
 		<div class="form-group ">
 			<label class="control-label" for="Theme">Theme</label><input
 				id="Theme" class="form-control" name="theme" placeholder="Theme"

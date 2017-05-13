@@ -10,6 +10,7 @@ use Quarx\Modules\Courses\Services\CourseService;
 use Quarx\Modules\Courses\Requests\CourseCreateRequest;
 use Quarx\Modules\Courses\Requests\CourseUpdateRequest;
 use Quarx\Modules\Courses\Models\CourseCategory;
+use Quarx\Modules\Courses\Models\CourseSection;
 
 class CoursesController extends Controller
 {
@@ -90,8 +91,20 @@ class CoursesController extends Controller
      */
     public function show($id)
     {
-        $course = $this->service->find($id);
-        return view('courses::courses.show')->with('course', $course);
+        //$course = $this->service->find($id);
+        // get the lookup tables info
+        $course = \DB::table('courses')
+            ->leftJoin('course_categorys', 'courses.category', 'course_categorys.id')
+            ->leftJoin('course_formats', 'courses.course_format_id', 'course_formats.id')
+            ->where('courses.id', '=', $id)
+            ->first();
+        
+        $sections = CourseSection::where('course_id', '=', $id)
+            ->get();
+        
+        return view('courses::courses.show')
+            ->with('course', $course)
+            ->with('sections', $sections);
     }
 
     /**

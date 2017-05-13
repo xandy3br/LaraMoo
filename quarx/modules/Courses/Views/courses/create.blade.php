@@ -12,8 +12,7 @@
 <div class="row">
 	<form method="POST" action="http://laramoo.local:8000/quarx/courses"
 		accept-charset="UTF-8" courses="1" class="add">
-		<input name="_token" value="sesUYbBTyv1mM3zN9hITd4xfw9YkvkUfxHb5ybQh"
-			type="hidden">
+		 {!! csrf_field() !!}
 		<div class="form-group ">
 			<label class="control-label" for="Category">Category</label>
 			  <select id="Category" class="form-control" name="category"

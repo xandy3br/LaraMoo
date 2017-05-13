@@ -23,3 +23,13 @@
 		Students
 	</a>
 </li>
+
+<li class="menulist">
+   <a  class="sub-menu-parent" data-toggle="dropdown">Gadget Apps<b class="caret visible-xs"></b></a>
+   <ul class="" style="visibility: hidden">
+      <li><a href="headless-devices.html">Headless Devices</a></li>
+      <li><a href="wearable-apps.html">Wearable Apps</a></li>
+      <li><a href="settop-box.html">Settop Box</a></li>
+      <li><a href="google-glass.html">Google Glass</a></li>
+   </ul>
+</li>

@@ -13,11 +13,18 @@ class CourseSection extends QuarxModel
     public $timestamps = true;
 
     public $fillable = [
-        // Course table data
+       'course_id', 'courseorder', 'sectionname', 'sectionshortdescription',
+       'sectiondescription', 'visible'
     ];
 
     public static $rules = [
-        // create rules
+       'course_id' => 'required|integer',
+       'sectionname' => 'required|max:255',
+       'sectionshortdescription' => 'required|max:255',
+       'sectiondescription' => 'required',
+       'courseorder' => 'required|integer',
+       'visible' => 'sometimes|integer'
+    
     ];
 
     

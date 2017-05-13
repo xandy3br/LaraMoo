@@ -1,7 +1,6 @@
 @extends('quarx::layouts.dashboard')
 
 @section('content')
-    @include('courses::courseheader')
     
     <div class="row">
         <a class="btn btn-primary pull-right" href="{!! route('quarx.courses.create') !!}">Add New</a>

@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+
+
+.summary-item {
+	font-weight: 1.2em;
+}
+
+.bottom-spacer-10 {
+	margin-bottom: 10px;
+}
+
+.bottom-spacer-20 {
+   margin-bottom: 20px;
+}

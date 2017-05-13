@@ -8,7 +8,7 @@ Route::group(['namespace' => 'Quarx\Modules\Courses\Controllers', 'prefix' => 'q
 |--------------------------------------------------------------------------
 */
 
-Route::resource('courses', 'CoursesController', [ 'except' => ['show'], 'as' => 'quarx' ]);
+Route::resource('courses', 'CoursesController', [  'as' => 'quarx' ]);
 //Route::get('courses', 'CoursesController@index')->name('quarx.courses.index');
 //Route::post('courses', 'CoursesController@index')->name('quarx.courses.store');
 Route::post('courses/search', 'CoursesController@search');
@@ -18,6 +18,6 @@ Route::resource('coursecategorys', 'CourseCategorysController', [ 'except' => ['
 //Route::get('courses/category/list', 'CourseCategorysController@index')->name('quarx/courses/category/list');
 //Route::get('courses/category/create', 'CourseCategorysController@create')->name('quarx/courses/category/create');
 
-
+Route::resource('coursesections', 'CourseSectionsController', [ 'except' => ['show'], 'as' => 'quarx' ]);
 
 });

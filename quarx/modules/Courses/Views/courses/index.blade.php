@@ -50,7 +50,7 @@
                 @foreach($courses as $course)
                     <tr>
                         <td>
-                            <a href="{!! route('quarx.courses.edit', [$course->id]) !!}">{!! $course->name !!}</a>
+                            <a href="{!! route('quarx.courses.show', [$course->id]) !!}">{!! $course->fullname !!}</a>
                         </td>
                         <td class="text-right">
                             <form method="post" action="{!! url('_sectionPrefix_courses/'.$course->id) !!}">
