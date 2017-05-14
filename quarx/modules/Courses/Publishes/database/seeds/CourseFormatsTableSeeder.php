@@ -39,6 +39,16 @@ class CourseFormatsTableSeeder extends Seeder
             'id' => 5,
             'format' => 'social',
             'description' => ''
+         ],
+         [
+          'id' => 6,
+          'format' => 'flash card',
+          'description' => 'Flash card format'
+         ],
+         [
+          'id' => 7,
+          'format' => 'Multi-Language Flash Card',
+          'description' => 'A multi language flash card course'
          ]
           
           

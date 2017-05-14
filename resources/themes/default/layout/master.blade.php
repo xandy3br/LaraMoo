@@ -57,6 +57,7 @@
     <script type="text/javascript">
         var _token = '{!! csrf_token() !!}';
         var _url = '{!! url("/") !!}';
+
     </script>
     @yield("pre-javascript")
     
