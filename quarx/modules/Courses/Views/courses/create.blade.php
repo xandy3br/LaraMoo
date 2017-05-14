@@ -54,21 +54,30 @@
 		</div>
 		
 		<div class="form-group ">
-			<label class="control-label" for="Course_format_id">Course Format Id</label>
-			<input id="Course_format_id" class="form-control" name="course_format_id"
-				placeholder="Course Format Id" type="number">
+			<label class="control-label" for="Course_format_id">Course Format</label>
+			  <select id="Course_format_id" class="form-control" name="course_format_id"
+				placeholder="Course Format">
+				@foreach ($courseformats as $courseformat)
+					<option value="{!! $courseformat->id !!}">{!! $courseformat->format !!}</option>
+				@endforeach
+			  </select>	
 		</div>
 		
 		<div class="form-group ">
-			<label class="control-label" for="Showgrades">Show Grades</label><input
-				id="Showgrades" class="form-control" name="showgrades"
-				placeholder="Show Grades" type="number">
+			<label class="control-label" for="Showgrades">Show Grades</label>
+			<select id="Showgrades" class="form-control" name="showgrades">
+				<option value="0">{!! trans('laramoocourse.no') !!}</option>
+				<option value="1">{!! trans('laramoocourse.yes') !!}</option>
+			</select>
 		</div>
 		
 		<div class="form-group ">
 			<label class="control-label" for="Newsitems">News Items</label>
-			<input id="Newsitems" class="form-control" name="newsitems"
-				placeholder="News Items" type="number">
+			<select id="Newsitems" class="form-control" name="newsitems">
+				<option value="0">{!! trans('laramoocourse.no') !!}</option>
+				<option value="1">{!! trans('laramoocourse.yes') !!}</option>
+			</select>
+			
 		</div>
 		
 		<div class="form-group ">
@@ -90,20 +99,28 @@
 		
 		<div class="form-group ">
 			<label class="control-label" for="Showreports">Showreports</label>
-			<input id="Showreports" class="form-control" name="showreports"
-				placeholder="Showreports" type="number">
+			<select id="Showreports" class="form-control" name="showreports">
+				<option value="0">{!! trans('laramoocourse.no') !!}</option>
+				<option value="1">{!! trans('laramoocourse.yes') !!}</option>
+			</select>
 		</div>
 		
 		<div class="form-group ">
-			<label class="control-label" for="Visible">Visible</label><input
-				id="Visible" class="form-control" name="visible"
-				placeholder="Visible" type="number">
+			<label class="control-label" for="Visible">Visible</label>
+			<select id="Visible" class="form-control" name="visible">
+				<option value="0">{!! trans('laramoocourse.no') !!}</option>
+				<option value="1">{!! trans('laramoocourse.yes') !!}</option>
+			</select>
 		</div>
 		
 		<div class="form-group ">
-			<label class="control-label" for="Lang">Lang</label><input id="Lang"
-				class="form-control" name="lang" placeholder="Lang" type="text">
+			<label class="control-label" for="Lang">Lang</label>
+			<select id="Lang" class="form-control" name="lang">
+				<option value="0">{!! trans('laramoocourse.no') !!}</option>
+				<option value="1">{!! trans('laramoocourse.yes') !!}</option>
+			</select>
 		</div>
+		
 		<div class="form-group ">
 			<label class="control-label" for="Theme">Theme</label>
 			<input id="Theme" class="form-control" name="theme" placeholder="Theme"

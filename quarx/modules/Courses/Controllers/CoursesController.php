@@ -58,10 +58,14 @@ class CoursesController extends Controller
             ->groupBy('categoryparent', 'categoryname', 'id')
             ->orderBy('categoryname')
             ->get();
-
+       
+       $courseformats = \DB::table('course_formats')
+            ->select(['id', 'format', 'description'])
+            ->get();
        
         return view('courses::courses.create')
-            ->with('categories', $categories);
+            ->with('categories', $categories)
+            ->with('courseformats', $courseformats);
     }
 
     /**

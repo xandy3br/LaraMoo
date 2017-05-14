@@ -18,6 +18,8 @@ return [
     'fullname' => 'Full Name',
     'shortname' => 'Short Name',
     'idnumber' => "ID Number",
-    'zerocourses' => "No Courses to display"
+    'zerocourses' => "No Courses to display",
+    'yes' => "Yes",
+    'no' => "No"
 
 ];

@@ -20,4 +20,10 @@ Route::resource('coursecategorys', 'CourseCategorysController', [ 'except' => ['
 
 Route::resource('coursesections', 'CourseSectionsController', [ 'except' => ['show'], 'as' => 'quarx' ]);
 
+Route::resource('quizs', 'QuizsController', [ 'except' => ['show'], 'as' => 'quarx' ]);
+Route::resource('quizquestions', 'QuizQuestionsController', [ 'except' => ['show'], 'as' => 'quarx' ]);
+Route::resource('teachers', 'TeachersController', [ 'except' => ['show'], 'as' => 'quarx' ]);
+Route::resource('students', 'StudentsController', [ 'except' => ['show'], 'as' => 'quarx' ]);
+
+
 });
