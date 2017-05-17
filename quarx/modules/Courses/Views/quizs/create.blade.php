@@ -1,36 +1,27 @@
 @extends('quarx::layouts.dashboard') @section('content')
 
 <div class="row">
-	<h1 class="page-header">Categories</h1>
+	<h1 class="page-header">Quizzes</h1>
 	<div class="form-group text-right">
-		<a href="quarx/courses/category/new" class="btn btn-warning raw-right">New Category</a>
+		<a href="quarx/quizs/questions/new" class="btn btn-warning raw-right">New Question</a>
 	</div>
 </div>
 
-@include('courses::coursecategorys.breadcrumbs', ['course' => ['create']])
+@include('courses::quizs.breadcrumbs', ['course' => ['create']])
 
 <div class="row">
-	<form method="POST" action="http://laramoo.local:8000/quarx/coursecategorys"
+	<form method="POST" action="http://laramoo.local:8000/quarx/quizs"
 		accept-charset="UTF-8" courses="1" class="add">
 		{!! csrf_field() !!}
 		<div class="form-group ">
-			<label class="control-label" for="Categoryname">Category Name</label><input
-				id="Categoryname" class="form-control" name="categoryname"
-				placeholder="Categoryname" type="text">
+			<label class="control-label" for="Quizname">Quiz Name</label>
+			<input id="Quizname" class="form-control" name="quizname"
+				placeholder="Quiz Name" type="text">
 		</div>
 		<div class="form-group ">
-			<label class="control-label" for="Description">Description</label><input
-				id="Description" class="form-control" name="description"
+			<label class="control-label" for="Description">Description</label>
+			<input id="Description" class="form-control" name="description"
 				placeholder="Description" type="text">
-		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Categoryparent">Category Parent</label>
-			  <select id="Categoryparent" class="form-control" name="categoryparent"
-				placeholder="Categoryparent">
-				@foreach ($categories as $category)
-					<option value="{!! $category->id !!}">{!! $category->categoryname !!}</option>
-				@endforeach
-			  </select>	
 		</div>
 		<div class="form-group ">
 			<label class="control-label" for="Sortorder">Sortorder</label> <input

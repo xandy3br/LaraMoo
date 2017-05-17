@@ -3,7 +3,8 @@
 @section('content')
     
     <div class="row">
-        <a class="btn btn-primary pull-right" href="{!! url('quarx/coursesections/create?course='.$course->id) !!}">Add New Section</a>
+		  <a class="btn btn-primary pull-right raw-margin-right-8" href="{!! url('quarx/quizs/create?course='.$course->id) !!}">Add New Quiz</a>    
+        <a class="btn btn-primary pull-right raw-margin-right-8" href="{!! url('quarx/coursesections/create?course='.$course->id) !!}">Add New Section</a>
         <a class="btn btn-primary pull-right raw-margin-right-8" href="{!! url('quarx/courses/'.$course->id.'/edit') !!}">Edit Course</a>
         <h1 class="page-header">{!! $course->fullname !!}</h1>
     </div>

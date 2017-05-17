@@ -1,12 +1,10 @@
 <div class="row">
     <ol class="breadcrumb">
-    	  <li><a href="/quarx/courses">Courses</a></li>
-        <li><a href="{!! url('quarx/coursecategorys') !!}">Categories</a></li>
-			@if (isset($category)) 
-        		<li class="active">{!! $category->categoryname !!}</li>
+        <li><a href="{!! url('quarx/courses') !!}">Courses</a></li>    
+        <li><a href="{!! url('quarx/quizs') !!}">Quizzes</a></li>
+			@if (isset($quiz)) 
+	        	<li class="active">{!! $quiz->quizname !!}</li>
         	@endif
-
-        <li class="active"></li>
     </ol>
 </div>
 

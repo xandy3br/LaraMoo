@@ -11,16 +11,22 @@
 		Categories
 	</a>
 </li>
-<li class=" dropdown @if (Request::is('quarx/courses/category/list') || Request::is('quarx/courses/category/*')) active @endif">
-	<a href="{{ url('quarx/courses/category/list') }}">
+<li class=" dropdown @if (Request::is('quarx/teachers/list') || Request::is('quarx/teachers/*')) active @endif">
+	<a href="{{ url('quarx/teachers') }}">
 		<span class="fa fa-file"></span>
 		Teachers
 	</a>
 </li>
-<li class=" dropdown @if (Request::is('quarx/courses/category/list') || Request::is('quarx/courses/category/*')) active @endif">
-	<a href="{{ url('quarx/courses/category/list') }}">
+<li class=" dropdown @if (Request::is('quarx/students/list') || Request::is('quarx/students/*')) active @endif">
+	<a href="{{ url('quarx/students') }}">
 		<span class="fa fa-file"></span>
 		Students
+	</a>
+</li>
+<li class=" dropdown @if (Request::is('quarx/quiz/list') || Request::is('quarx/quiz/*')) active @endif">
+	<a href="{{ url('quarx/quizs') }}">
+		<span class="fa fa-file"></span>
+		Quiz
 	</a>
 </li>
 

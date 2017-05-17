@@ -43,6 +43,7 @@
             <table class="table table-striped">
                 <thead>
                     <th>Name</th>
+                    <th>Sort Order</th>
                     <th width="200px" class="text-right">Actions</th>
                 </thead>
                 <tbody>
@@ -51,6 +52,9 @@
                     <tr>
                         <td>
                             <a href="{!! route('quarx.coursecategorys.edit', [$coursecategory->id]) !!}">{!! $coursecategory->categoryname !!}</a>
+                        </td>
+                        <td>
+                        	{!! $coursecategory->sortorder !!}
                         </td>
                         <td class="text-right">
                             <form method="post" action="{!! url('_sectionPrefix_courses/'.$coursecategory->id) !!}">
