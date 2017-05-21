@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         
         
         // Seeders for testing data... remove at some point
-        
+        $this->call(LaraMooTestDataTableSeeder::class);
         
         Model::reguard();
     }

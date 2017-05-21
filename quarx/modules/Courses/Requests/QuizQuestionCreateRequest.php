@@ -6,7 +6,7 @@ use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 use Quarx\Modules\Courses\Models\Quiz;
 
-class QuizCreateRequest extends FormRequest
+class QuizQuestionCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

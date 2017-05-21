@@ -24,6 +24,10 @@ class RolesTableSeeder extends Seeder
                 'label' => 'Admin',
             ]);
             Role::create([
+               'name' => 'supervisor',
+               'label' => 'Teacher Supervisor',
+            ]);
+            Role::create([
                'name' => 'teacher',
                'label' => 'Teacher',
             ]);

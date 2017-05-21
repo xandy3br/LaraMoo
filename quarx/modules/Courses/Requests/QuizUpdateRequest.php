@@ -6,7 +6,7 @@ use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 use Quarx\Modules\Courses\Models\QuizQuestion;
 
-class QuizQuestionUpdateRequest extends FormRequest
+class QuizUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,6 +29,6 @@ class QuizQuestionUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        return QuizQuestion::$rules;
+        return Quiz::$rules;
     }
 }
