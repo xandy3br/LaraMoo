@@ -34,18 +34,15 @@
 				class="form-control" name="icon" placeholder="Icon" type="text">
 		</div>
 		<div class="form-group ">
-			<label class="control-label" for="Showreports">Showreports</label><input
-				id="Showreports" class="form-control" name="showreports"
-				placeholder="Showreports" type="number">
+			@showReportsSelect("1")
 		</div>
 		<div class="form-group ">
 			<label class="control-label" for="Visible">Visible</label><input
 				id="Visible" class="form-control" name="visible"
 				placeholder="Visible" type="number">
 		</div>
-		<div class="form-group ">
-			<label class="control-label" for="Lang">Lang</label><input id="Lang"
-				class="form-control" name="lang" placeholder="Lang" type="text">
+		<div class="form-group">
+			@langSelect("")
 		</div>
 		<div class="form-group ">
 			<label class="control-label" for="Theme">Theme</label><input
@@ -54,9 +51,9 @@
 		</div>
 
 		<div class="form-group text-right">
-			<a href="http://laramoo.local:8000/quarx/coursecategorys"
-				class="btn btn-default raw-left">Cancel</a> <input
-				class="btn btn-primary" value="Save" type="submit">
+			<a href="http://laramoo.local:8000/quarx/courses/"{!! $course !!}"
+				class="btn btn-default raw-left">Cancel</a>
+				 <input	class="btn btn-primary" value="Save" type="submit">
 		</div>
 
 	</form>

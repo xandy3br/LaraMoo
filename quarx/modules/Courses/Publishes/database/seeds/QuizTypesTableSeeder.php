@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CourseCategorysTableSeeder extends Seeder
+class QuizTypesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,30 +12,39 @@ class CourseCategorysTableSeeder extends Seeder
     public function run()
     {
         //
-       \DB::table('course_categorys')->truncate();
+       \DB::table('quiz_types')->truncate();
         
-       \DB::table('course_categorys')->insert([
+       \DB::table('quiz_types')->insert([
           [
             'id' => 1,
-            'categoryname' => 'Not Categorized',
-            'description' => 'Courses that are not categorized yet',
-            'categoryparent' => 0,
-            'sortorder' => 1,
-            'visible' => 1,
-            'created_at' => null,
-            'updated_at' => null
-         ],
+            'quiztype' => 'Sealed',
+            'description' => 'Quiz can only be taken once and the answers are never visible' 
+          ],
           [
-          'id' => 2,
-          'categoryname' => 'Miscellaneous',
-          'description' => 'Courses that cannot be categorized',
-          'categoryparent' => 0,
-          'sortorder' => 2,
-          'visible' => 1,
-          'created_at' => null,
-          'updated_at' => null
-              
-          ]
+            'id' => 2,
+             'quiztype' => '',
+             'description' => ''
+          ],
+          [
+             'id' => 3,
+             'quiztype' => '',
+             'description' => ''
+          ],
+          [
+             'id' => 4,
+             'quiztype' => '',
+             'description' => ''
+          ],
+          [
+             'id' => 5,
+             'quiztype' => '',
+             'description' => ''
+          ],
+          [
+             'id' => 6,
+             'quiztype' => '',
+             'description' => ''
+          ],
           
           
        ]);

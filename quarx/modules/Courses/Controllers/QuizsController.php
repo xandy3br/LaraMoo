@@ -10,6 +10,7 @@ use Quarx\Modules\Courses\Services\QuizService;
 use Quarx\Modules\Courses\Requests\QuizCreateRequest;
 use Quarx\Modules\Courses\Requests\QuizUpdateRequest;
 use Quarx\Modules\Courses\Models\Quiz;
+use Quarx\Modules\Courses\Helpers\LookupsHelper;
 
 class QuizsController extends Controller
 {
@@ -58,18 +59,22 @@ class QuizsController extends Controller
     {
        $input = $request->all();
        
-       $course = \DB::table('courses')
-           ->where('id', '=', $input['course'])
-           ->first();
+//       $course = \DB::table('courses')
+//           ->where('id', '=', $input['quiz'])
+//           ->first();
            
-       $sections = \DB::table('course_sections')
-           ->where('course_id', '=', $input['course'])
-           ->orderBy('courseorder')
-           ->get();
+//       $sections = \DB::table('course_sections')
+//           ->where('course_id', '=', $input['course'])
+//           ->orderBy('courseorder')
+//           ->get();
        
+        $languageArray = LookupsHelper::languageArray();
+       \Log::info('languageArray: ' . print_r($languageArray, true));
         return view('courses::quizs.create')
-            ->with('sections', $sections)
-            ->with('course', $course);
+            ->with('languages', $languageArray)
+            ->with('course', $input['course']);
+//            ->with('sections', $sections)
+//            ->with('course', $course);
     }
 
     /**

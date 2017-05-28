@@ -80,6 +80,7 @@ return [
 
     'languages' => [
         'en' => 'english',
+        'zh' => 'chinese'
     ],
 
     /*

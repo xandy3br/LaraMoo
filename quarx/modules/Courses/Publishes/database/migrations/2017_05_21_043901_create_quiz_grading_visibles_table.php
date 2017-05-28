@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuestionTypesTable extends Migration
+class CreateQuizGradingVisiblesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateQuestionTypesTable extends Migration
      */
     public function up()
     {
-       Schema::dropIfExists('question_types');
+       Schema::dropIfExists('quiz_grading_visibles');
        
-       Schema::create('question_types', function (Blueprint $table) {
+       Schema::create('quiz_grading_visibles', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('questiontype', 64);
-           
-          $table->index(['questiontype', 'id'], 'question_types_questiontype_index');
+          $table->integer('gradingvisibility');
+          $table->string('description');
+          
+          $table->index(['gradingvisibility', 'id'], 'quiz_grading_visibles_visible_index');
            
        });
-           
     }
 
     /**
@@ -32,6 +32,6 @@ class CreateQuestionTypesTable extends Migration
      */
     public function down()
     {
-       Schema::dropIfExists('question_types');
+        //
     }
 }

@@ -5,7 +5,7 @@ namespace Quarx\Modules\Courses\Services;
 use Config;
 use Quarx\Modules\Courses\Models\Teacher;
 
-class CourseService
+class TeacherService
 {
     public function __construct(Teacher $teacher)
     {
