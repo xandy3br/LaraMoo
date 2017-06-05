@@ -49,13 +49,14 @@ class CoursesModuleProvider extends ServiceProvider
        $retVal = '<label class="control-label" for="' . $for . '">' . $for . '</label>' .
           '<select id="' . $for . '" class="form-control" name="' . $name . '">' . 
              '<option value="0"';
+\Log::info('selected: ' . $selected);       
        if ($selected == "0") {
            $retVal .= ' selected="selected"';
        }
        $retVal .= '>False</option>';
              
        $retVal .= '<option value="1"';
-       if ($selected == "1") {
+       if (($selected == "1") || ($selected == 1)) {
           $retVal .= ' selected="selected"';
        }
        $retVal .= '>True</option></select>';
@@ -84,6 +85,10 @@ class CoursesModuleProvider extends ServiceProvider
           return $this->trueFalseSelect('Showreports', 'showreports', $selected);
        });
        
+       Blade::directive('showVisibleSelect', function ($selected) {
+          return $this->trueFalseSelect('Visible', 'visible', $selected);
+       });
+          
     }
     
     

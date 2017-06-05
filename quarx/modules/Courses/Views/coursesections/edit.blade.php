@@ -33,7 +33,7 @@
 			<label class="control-label" for="Courseorder">Course Order</label>
 			<input id="Courseorder" class="form-control" name="courseorder"
 				value="{!! $coursesection->courseorder !!}"
-				placeholder="Courseorder" type="number">
+				placeholder="Courseorder" type="number" min="1" max="300" >
 		</div>
 
 		<div class="form-group ">
@@ -52,12 +52,13 @@
 				{!! $coursesection->sectiondescription !!}
 			</textarea>
 		</div>
-		
+
 		<div class="form-group ">
-			<label class="control-label" for="Visible">Visible</label> <input
-				id="Visible" class="form-control" name="visible"
-				value="{!! $coursesection->visible !!}" placeholder="Visible"
-				type="number">
+			<label class="control-label" for="Visible">Visible</label>
+			<select id="Visible" class="form-control" name="visible">
+				<option value="0" {!! ($coursesection->visible == 0 ? 'selected="selected"' : '') !!}>False</option>
+				<option value="1" {!! ($coursesection->visible == 1 ? 'selected="selected"' : '') !!}>True</option>
+			</select>
 		</div>
 
 		<div class="form-group text-right">
