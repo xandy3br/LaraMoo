@@ -32,6 +32,6 @@ class CreateQuizGradingVisiblesTable extends Migration
      */
     public function down()
     {
-        //
+       Schema::dropIfExists('quiz_grading_visibles');
     }
 }
