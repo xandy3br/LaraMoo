@@ -10,7 +10,7 @@ Inspired by Moodle, built with Laravel and Quarx for the backend.
 ### The plan is to build the backend as a normal website (courses, teachers and admin) with Quarx. The Front end (students) will be mobile and built with Ionic.
 
 # Current Technologies Used
-## Laravel 5.4 - thanks to Laravel for a great framework to build on
+## Laravel 5.5 - thanks to Laravel for a great framework to build on
 [Laravel Website](http://laravel.com)
 
 

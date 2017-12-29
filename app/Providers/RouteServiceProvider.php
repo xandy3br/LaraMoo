@@ -57,6 +57,7 @@ class RouteServiceProvider extends ServiceProvider
 		          	require base_path('routes/web.php');
 			         require base_path('routes/quarx.php');
 			         require base_path('routes/courses-web.php');
+			         require base_path('routes/quazar.php');
                });
     }
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use \Laravel\Cashier\Billable;
 
 class UserMeta extends Model
 {
